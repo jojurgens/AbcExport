@@ -1,0 +1,45 @@
+﻿Build started 02.11.2014 16:54:30.
+     1>Project "C:\Program Files\Autodesk\Maya2014\devkit\plug-ins\AbcExport\AbcExport.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "x64\Release\qAbcExport.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "x64\Release\qAbcExport.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /I. /I..\..\..\include /I..\..\..\..\include /I..\..\Alembic\include /I..\..\Alembic\include\AlembicPrivate /I..\..\Alembic\include\AlembicPrivate\OpenEXR /Zi /nologo /W3 /WX- /O2 /Ob1 /D NDEBUG /D WIN32 /D _WINDOWS /D _USRDLL /D NT_PLUGIN /D _HAS_ITERATOR_DEBUGGING=0 /D _SECURE_SCL=0 /D _SECURE_SCL_THROWS=0 /D _SECURE_SCL_DEPRECATE=0 /D _CRT_SECURE_NO_DEPRECATE /D TBB_USE_DEBUG=0 /D __TBB_LIB_NAME=tbb.lib /D REQUIRE_IOSTREAM /D AW_NEW_IOSTREAMS /D Bits64_ /D _WINDLL /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"x64\Release\\" /Fd"x64\Release\qAbcExport.pdb" /Gd /TP /errorReport:prompt AbcExport.cpp AbcWriteJob.cpp AttributesWriter.cpp MayaMeshWriter.cpp MayaPointPrimitiveWriter.cpp MayaTransformWriter.cpp MayaUtility.cpp MayaCameraWriter.cpp MayaNurbsCurveWriter.cpp MayaLocatorWriter.cpp MayaNurbsSurfaceWriter.cpp
+         AbcExport.cpp
+         AbcWriteJob.cpp
+         AttributesWriter.cpp
+         MayaMeshWriter.cpp
+         MayaPointPrimitiveWriter.cpp
+     1>MayaPointPrimitiveWriter.cpp(155): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         MayaTransformWriter.cpp
+         MayaUtility.cpp
+         MayaCameraWriter.cpp
+         MayaNurbsCurveWriter.cpp
+         MayaLocatorWriter.cpp
+         MayaNurbsSurfaceWriter.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"x64\Release\qAbcExport.mll" /INCREMENTAL:NO /NOLOGO /LIBPATH:..\..\..\lib /LIBPATH:..\..\..\..\lib /LIBPATH:..\..\Alembic\lib OpenMaya.lib Foundation.lib OpenMayaAnim.lib OpenMayaFX.lib OpenMayaRender.lib OpenMayaUI.lib AlembicAbcCoreFactory.lib AlembicAbcCoreHDF5.lib AlembicAbcCoreOgawa.lib AlembicAbcGeom.lib AlembicAbc.lib AlembicAbcCoreAbstract.lib AlembicAbcMaterial.lib AlembicAbcCollection.lib AlembicOgawa.lib AlembicUtil.lib hdf5_hl.lib hdf5.lib AlembicIex.lib AlembicHalf.lib AlembicImath.lib libzlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Release\qAbcExport.mll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Program Files\Autodesk\Maya2014\devkit\plug-ins\AbcExport\x64\Release\qAbcExport.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE:NO /NXCOMPAT /IMPLIB:"x64\Release\qAbcExport.lib" /MACHINE:X64 /DLL x64\Release\AbcExport.obj
+         x64\Release\AbcWriteJob.obj
+         x64\Release\AttributesWriter.obj
+         x64\Release\MayaMeshWriter.obj
+         x64\Release\MayaPointPrimitiveWriter.obj
+         x64\Release\MayaTransformWriter.obj
+         x64\Release\MayaUtility.obj
+         x64\Release\MayaCameraWriter.obj
+         x64\Release\MayaNurbsCurveWriter.obj
+         x64\Release\MayaLocatorWriter.obj
+         x64\Release\MayaNurbsSurfaceWriter.obj /export:initializePlugin /export:uninitializePlugin 
+            Creating library x64\Release\qAbcExport.lib and object x64\Release\qAbcExport.exp
+         AbcExport.vcxproj -> C:\Program Files\Autodesk\Maya2014\devkit\plug-ins\AbcExport\x64\Release\qAbcExport.mll
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"x64\Release\qAbcExport.mll;#2" /manifest x64\Release\qAbcExport.mll.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "x64\Release\qAbcExport.unsuccessfulbuild".
+         Touching "x64\Release\qAbcExport.lastbuildstate".
+     1>Done Building Project "C:\Program Files\Autodesk\Maya2014\devkit\plug-ins\AbcExport\AbcExport.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:35.20

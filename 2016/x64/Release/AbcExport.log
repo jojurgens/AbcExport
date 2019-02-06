@@ -1,0 +1,32 @@
+﻿Build started 2016-04-18 14:32:29.
+     1>Project "S:\pipeline\visual_studio\packages\AbcExport\2016\AbcExport.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\x86_amd64\CL.exe /c /I. /I\include /I..\..\..\..\include /I\devkit\Alembic\include /I\devkit\\Alembic\include\AlembicPrivate /I\devkit\\Alembic\include\AlembicPrivate\ilmbase /Zi /nologo /W3 /WX- /O2 /Ob1 /D NDEBUG /D WIN32 /D _WINDOWS /D _USRDLL /D NT_PLUGIN /D _HAS_ITERATOR_DEBUGGING=0 /D _SECURE_SCL=0 /D _SECURE_SCL_THROWS=0 /D _SECURE_SCL_DEPRECATE=0 /D _CRT_SECURE_NO_DEPRECATE /D TBB_USE_DEBUG=0 /D __TBB_LIB_NAME=tbb.lib /D Bits64_ /D WIN32_LEAN_AND_MEAN /D _WINDLL /GF /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /GR /Fo"x64\Release\\" /Fd"x64\Release\QAbcExport.pdb" /Gd /TP /errorReport:prompt AbcExport.cpp AbcWriteJob.cpp AttributesWriter.cpp MayaMeshWriter.cpp MayaPointPrimitiveWriter.cpp MayaTransformWriter.cpp MayaUtility.cpp MayaCameraWriter.cpp MayaNurbsCurveWriter.cpp MayaLocatorWriter.cpp MayaNurbsSurfaceWriter.cpp
+         AbcExport.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         AbcWriteJob.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         AttributesWriter.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         MayaMeshWriter.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         MayaPointPrimitiveWriter.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         MayaTransformWriter.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         MayaUtility.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         MayaCameraWriter.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         MayaNurbsCurveWriter.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         MayaLocatorWriter.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         MayaNurbsSurfaceWriter.cpp
+     1>s:\pipeline\visual_studio\packages\abcexport\2016\Foundation.h(40): fatal error C1083: Cannot open include file: 'Alembic/AbcGeom/All.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "S:\pipeline\visual_studio\packages\AbcExport\2016\AbcExport.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:02.19
