@@ -1,4 +1,6 @@
-﻿  AbcExport.cpp
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : The process cannot access the file 's:\pipeline\visual_studio\packages\abcexport\2018\x64\release\attributeswriter.obj' because it is being used by another process.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (qAbcExport.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  AbcExport.cpp
 AbcExport.cpp(653): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFileObject::path': Use the methods MFileObject::expandedPath or MFileObject::resolvedPath instead.
   S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFileObject.h(158): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFileObject::path'
 AbcExport.cpp(669): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
@@ -9,115 +11,7 @@ AbcWriteJob.cpp(266): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDepen
 AbcWriteJob.cpp(388): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
   S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
   AttributesWriter.cpp
-AttributesWriter.cpp(1715): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
+AttributesWriter.cpp(1713): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
   S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-AttributesWriter.cpp(1724): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
+AttributesWriter.cpp(1722): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
   S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-  MayaMeshWriter.cpp
-MayaMeshWriter.cpp(161): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MItDependencyGraph::thisNode': Use MItDependencyGraph::currentItem instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MItDependencyGraph.h(191): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MItDependencyGraph::thisNode'
-MayaMeshWriter.cpp(340): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaMeshWriter.cpp(988): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaMeshWriter.cpp(992): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaMeshWriter.cpp(996): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-  MayaPointPrimitiveWriter.cpp
-  MayaTransformWriter.cpp
-MayaTransformWriter.cpp(48): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(59): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(70): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(84): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(175): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(193): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(240): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(249): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(258): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(270): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(334): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(345): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(356): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(370): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(536): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(591): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(634): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(680): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(768): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaTransformWriter.cpp(969): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-  MayaUtility.cpp
-MayaUtility.cpp(287): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MItDependencyGraph::thisNode': Use MItDependencyGraph::currentItem instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MItDependencyGraph.h(191): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MItDependencyGraph::thisNode'
-MayaUtility.cpp(384): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-  MayaCameraWriter.cpp
-MayaCameraWriter.cpp(80): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaCameraWriter.cpp(87): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaCameraWriter.cpp(89): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-  MayaNurbsCurveWriter.cpp
-MayaNurbsCurveWriter.cpp(285): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-MayaNurbsCurveWriter.cpp(289): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-MayaNurbsCurveWriter.cpp(294): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-MayaNurbsCurveWriter.cpp(300): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-MayaNurbsCurveWriter.cpp(305): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-MayaNurbsCurveWriter.cpp(185): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaNurbsCurveWriter.cpp(310): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-  MayaLocatorWriter.cpp
-MayaLocatorWriter.cpp(66): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(67): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(68): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(69): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(71): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(72): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(73): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(74): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(134): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(135): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(136): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(137): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(138): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-MayaLocatorWriter.cpp(139): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-  MayaNurbsSurfaceWriter.cpp
-  Generating Code...
-C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(1189,5): warning MSB8012: TargetPath(S:\pipeline\visual_studio\packages\AbcExport\2018\x64\Release\qAbcExport.mll) does not match the Linker's OutputFile property value (S:\pipeline\visual_studio\DEPLOY\maya\plugins_2018\qAbcExport.mll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
-LINK : fatal error LNK1181: cannot open input file 'AlembicAbcCoreFactory.lib'

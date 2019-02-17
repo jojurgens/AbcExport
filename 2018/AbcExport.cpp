@@ -1133,7 +1133,7 @@ MStatus uninitializePlugin(MObject obj)
     MStatus status;
     MFnPlugin plugin(obj);
 
-    status = plugin.deregisterCommand("AbcExport");
+    status = plugin.deregisterCommand("qAbcExport");
     if (!status)
     {
         status.perror("deregisterCommand");
