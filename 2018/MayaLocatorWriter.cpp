@@ -63,15 +63,15 @@ MayaLocatorWriter::MayaLocatorWriter(MDagPath & iDag,
     // of type double[6]
     Alembic::AbcCoreAbstract::DataType dType(Alembic::Util::kFloat64POD, 6);
 
-    MPlug posX = fnLocator.findPlug("localPositionX");
-    MPlug posY = fnLocator.findPlug("localPositionY");
-    MPlug posZ = fnLocator.findPlug("localPositionZ");
-    MPlug pos = fnLocator.findPlug("localPosition");
+    MPlug posX = fnLocator.findPlug("localPositionX", true);
+    MPlug posY = fnLocator.findPlug("localPositionY", true);
+    MPlug posZ = fnLocator.findPlug("localPositionZ", true);
+    MPlug pos = fnLocator.findPlug("localPosition", true);
 
-    MPlug scaleX = fnLocator.findPlug("localScaleX");
-    MPlug scaleY = fnLocator.findPlug("localScaleY");
-    MPlug scaleZ = fnLocator.findPlug("localScaleZ");
-    MPlug scale = fnLocator.findPlug("localScale");
+    MPlug scaleX = fnLocator.findPlug("localScaleX", true);
+    MPlug scaleY = fnLocator.findPlug("localScaleY", true);
+    MPlug scaleZ = fnLocator.findPlug("localScaleZ", true);
+    MPlug scale = fnLocator.findPlug("localScale", true);
 
     if ( iTimeIndex != 0 && (util::getSampledType(posX) != 0 ||
         util::getSampledType(posY) != 0 ||
@@ -99,7 +99,11 @@ MayaLocatorWriter::MayaLocatorWriter(MDagPath & iDag,
     val[3] = scaleX.asDouble();
     val[4] = scaleY.asDouble();
     val[5] = scaleZ.asDouble();
-    mSp.set(val);
+
+    if (!mIsAnimated || iArgs.setFirstAnimShape)
+    {
+        mSp.set(val);
+    }
 
     Alembic::Abc::OCompoundProperty arbGeom;
     Alembic::Abc::OCompoundProperty userProps;
@@ -111,7 +115,7 @@ MayaLocatorWriter::MayaLocatorWriter(MDagPath & iDag,
 
     mAttrs = AttributesWriterPtr(new AttributesWriter(arbGeom, userProps,
                                                       mXform, fnLocator,
-                                                      iTimeIndex, iArgs));
+                                                      iTimeIndex, iArgs, true));
 }
 
 
@@ -131,12 +135,12 @@ void MayaLocatorWriter::write()
     }
 
     double val[6];
-    val[0] = fnLocator.findPlug("localPositionX").asDouble();
-    val[1] = fnLocator.findPlug("localPositionY").asDouble();
-    val[2] = fnLocator.findPlug("localPositionZ").asDouble();
-    val[3] = fnLocator.findPlug("localScaleX").asDouble();
-    val[4] = fnLocator.findPlug("localScaleY").asDouble();
-    val[5] = fnLocator.findPlug("localScaleZ").asDouble();
+    val[0] = fnLocator.findPlug("localPositionX", true).asDouble();
+    val[1] = fnLocator.findPlug("localPositionY", true).asDouble();
+    val[2] = fnLocator.findPlug("localPositionZ", true).asDouble();
+    val[3] = fnLocator.findPlug("localScaleX", true).asDouble();
+    val[4] = fnLocator.findPlug("localScaleY", true).asDouble();
+    val[5] = fnLocator.findPlug("localScaleZ", true).asDouble();
 
     mSp.set(val);
 }

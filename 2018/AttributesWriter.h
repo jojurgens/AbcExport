@@ -52,7 +52,7 @@ class AttributesWriter
                      Alembic::Abc::OObject & iParentObj,
                      const MFnDependencyNode & iNode,
                      Alembic::Util::uint32_t iTimeIndex,
-                     const JobArgs & iArgs);
+                     const JobArgs & iArgs, bool isShape);
 
     ~AttributesWriter();
 
@@ -73,10 +73,10 @@ class AttributesWriter
 
     // animated visibility plug
     PlugAndObjScalar mAnimVisibility;
-	
+
 	// raymond
 	bool animVisibility;
-	MDagPath dagPath;	
+	MDagPath dagPath;
 };
 
 typedef Alembic::Util::shared_ptr<AttributesWriter> AttributesWriterPtr;

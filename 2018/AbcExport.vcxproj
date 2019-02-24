@@ -115,7 +115,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PreprocessorDefinitions>NDEBUG;OSWin_;WIN32;_WINDOWS;_USRDLL;NT_PLUGIN;_HAS_ITERATOR_DEBUGGING=0;_SECURE_SCL=0;_SECURE_SCL_THROWS=0;_SECURE_SCL_DEPRECATE=0;_CRT_SECURE_NO_DEPRECATE;TBB_USE_DEBUG=0;__TBB_LIB_NAME=tbb.lib;Bits64_;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\devkit;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\devkit\Alembic;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\devkit\Alembic\include;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\devkit\Alembic\include\AlembicPrivate;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\devkit\Alembic\include\AlembicPrivate\ilmbase;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include;.;..\..\..\include;..\..\..\..\include;..\..\Alembic\include;..\..\Alembic\include\AlembicPrivate;..\..\Alembic\include\AlembicPrivate\ilmbase;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\devkit\Alembic\include;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\devkit\Alembic\include\Alembic;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\devkit\Alembic\include\AlembicPrivate\ilmbase;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -128,8 +128,8 @@
     <Link>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>S:\pipeline\visual_studio\contrib\maya2019_devkitBase\lib;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\devkit\Alembic\lib;..\..\Alembic\lib;S:\pipeline\visual_studio\contrib\zlib-1.2.11\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>OpenMaya.lib;Foundation.lib;OpenMayaAnim.lib;OpenMayaFX.lib;OpenMayaRender.lib;OpenMayaUI.lib;Alembic.lib;AlembicHalf.lib;AlembicIex.lib;AlembicImath.lib;hdf5_hl.lib;hdf5.lib;zlibstat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>S:\pipeline\visual_studio\contrib\maya2019_devkitBase\devkit\Alembic\lib;S:\pipeline\visual_studio\contrib\maya2019_devkitBase\lib;..\..\..\lib;..\..\..\..\lib;..\..\Alembic\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OpenMaya.lib;Foundation.lib;OpenMayaAnim.lib;OpenMayaFX.lib;OpenMayaRender.lib;OpenMayaUI.lib;Alembic.lib;AlembicHalf.lib;AlembicIex.lib;AlembicImath.lib;hdf5.lib;hdf5_hl.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

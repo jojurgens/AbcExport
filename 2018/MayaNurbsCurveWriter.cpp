@@ -74,11 +74,22 @@ namespace
                         continue;
                     }
 
-                    // with the flag set to true, check the DagPath and it's
-                    // parent
-                    if (util::isAnimated(curve, true))
+                    // with the flag set to true, check the DagPath and its
+                    // parent.
+                    // Note since we're collecting a group of curves, and
+                    // if  even one is animated, the whole group will be,
+                    // so don't bother checking additional curves.
+                    if (!oIsAnimated)
                     {
-                        oIsAnimated = true;
+                        if (util::isAnimated(curve, true))
+                        {
+                            oIsAnimated = true;
+                        }
+                        MObject curveXform(curvePath.transform());
+                        if (util::isAnimated(curveXform, true))
+                        {
+                            oIsAnimated = true;
+                        }
                     }
                 }
             }
@@ -132,9 +143,12 @@ MayaNurbsCurveWriter::MayaNurbsCurveWriter(MDagPath & iDag,
     }
 
     mAttrs = AttributesWriterPtr(new AttributesWriter(cp, up, obj, fnDepNode,
-        iTimeIndex, iArgs));
+        iTimeIndex, iArgs, true));
 
-    write();
+    if (!mIsAnimated || iArgs.setFirstAnimShape)
+    {
+        write();
+    }
 }
 
 unsigned int MayaNurbsCurveWriter::getNumCVs()
@@ -182,7 +196,7 @@ void MayaNurbsCurveWriter::write()
     bool useConstWidth = false;
 
     MFnDependencyNode dep(mRootDagPath.transform());
-    MPlug constWidthPlug = dep.findPlug("width");
+    MPlug constWidthPlug = dep.findPlug("width", true);
 
     if (!constWidthPlug.isNull())
     {
@@ -282,32 +296,32 @@ void MayaNurbsCurveWriter::write()
             if (knotsArray[0] == knotsArray[knotsLength - 1] ||
                 knotsArray[0] == knotsArray[1])
             {
-                knots.push_back(knotsArray[0]);
+                knots.push_back(static_cast<float>(knotsArray[0]));
             }
             else
             {
-                knots.push_back(2 * knotsArray[0] - knotsArray[1]);
+                knots.push_back(static_cast<float>(2 * knotsArray[0] - knotsArray[1]));
             }
 
             for (unsigned int j = 0; j < knotsLength; ++j)
             {
-                knots.push_back(knotsArray[j]);
+                knots.push_back(static_cast<float>(knotsArray[j]));
             }
 
             if (knotsArray[0] == knotsArray[knotsLength - 1] ||
                 knotsArray[knotsLength - 1] == knotsArray[knotsLength - 2])
             {
-                knots.push_back(knotsArray[knotsLength - 1]);
+                knots.push_back(static_cast<float>((knotsArray[knotsLength - 1])));
             }
             else
             {
-                knots.push_back(2 * knotsArray[knotsLength - 1] -
-                                knotsArray[knotsLength - 2]);
+                knots.push_back(static_cast<float>(2 * knotsArray[knotsLength - 1] -
+                                knotsArray[knotsLength - 2]));
             }
         }
 
         // width
-        MPlug widthPlug = curve.findPlug("width");
+        MPlug widthPlug = curve.findPlug("width", true);
 
         if (!useConstWidth && !widthPlug.isNull())
         {

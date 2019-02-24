@@ -1153,7 +1153,7 @@ MStatus initializePlugin(MObject obj)
     MFnPlugin plugin(obj, "Alembic", ABCEXPORT_VERSION, "Any");
 
     status = plugin.registerCommand(
-        "qAbcExport", AbcExport::creator,
+        "AbcExport", AbcExport::creator,
         AbcExport::createSyntax );
 
     if (!status)
@@ -1161,7 +1161,7 @@ MStatus initializePlugin(MObject obj)
         status.perror("registerCommand");
     }
 
-    MGlobal::executeCommandOnIdle("AlembicCreateUI");
+	MGlobal::executeCommandOnIdle("AlembicCreateUI");
 
     MString info = "AbcExport v";
     info += ABCEXPORT_VERSION;
@@ -1182,7 +1182,7 @@ MStatus uninitializePlugin(MObject obj)
     {
         status.perror("deregisterCommand");
     }
-
+    
     MGlobal::executeCommandOnIdle("AlembicDeleteUI");
 
     return status;

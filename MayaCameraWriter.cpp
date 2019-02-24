@@ -58,7 +58,6 @@ MayaCameraWriter::MayaCameraWriter(MDagPath & iDag,
     Alembic::AbcGeom::OCamera obj(iParent, name.asChar(), iTimeIndex);
     mSchema = obj.getSchema();
 
-
     MObject cameraObj = iDag.node();
     if (iTimeIndex != 0 && util::isAnimated(cameraObj))
     {

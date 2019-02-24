@@ -58,7 +58,6 @@ MayaCameraWriter::MayaCameraWriter(MDagPath & iDag,
     Alembic::AbcGeom::OCamera obj(iParent, name.asChar(), iTimeIndex);
     mSchema = obj.getSchema();
 
-
     MObject cameraObj = iDag.node();
     if (iTimeIndex != 0 && util::isAnimated(cameraObj))
     {
@@ -77,16 +76,16 @@ MayaCameraWriter::MayaCameraWriter(MDagPath & iDag,
     {
         sel.getDependNode(0, renderObj);
         MFnDependencyNode dep(renderObj);
-        MPlug plug = dep.findPlug("motionBlurUseShutter");
+        MPlug plug = dep.findPlug("motionBlurUseShutter", true);
         if (plug.asBool())
         {
             MTime sec(1.0, MTime::kSeconds);
             double val = sec.as(MTime::uiUnit());
 
             mUseRenderShutter = true;
-            plug = dep.findPlug("motionBlurShutterOpen");
+            plug = dep.findPlug("motionBlurShutterOpen", true);
             mShutterOpen = plug.asDouble() / val;
-            plug = dep.findPlug("motionBlurShutterClose");
+            plug = dep.findPlug("motionBlurShutterClose", true);
             mShutterClose = plug.asDouble() / val;
         }
     }
@@ -100,9 +99,12 @@ MayaCameraWriter::MayaCameraWriter(MDagPath & iDag,
     }
 
     mAttrs = AttributesWriterPtr(new AttributesWriter(cp, up, obj, cam,
-        iTimeIndex, iArgs));
+        iTimeIndex, iArgs, true));
 
-    write();
+    if (!mIsAnimated || iArgs.setFirstAnimShape)
+    {
+        write();
+    }
 }
 
 void MayaCameraWriter::write()

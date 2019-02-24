@@ -1129,6 +1129,22 @@ bool MFnTypedDataToSample(MFnData::Type iType,
         }
         break;
 
+        case MFnData::kFloatArray:
+        {
+            MFnFloatArrayData arr(iPlug.asMObject());
+
+            unsigned int length = arr.length();
+            std::vector< float > val(length);
+            for (unsigned int i = 0; i < length; i++)
+            {
+                val[i] = arr[i];
+            }
+            AbcA::ArraySample samp(&(val.front()), oProp.getDataType(),
+                Alembic::Util::Dimensions(length));
+            oProp.set(samp);
+        }
+        break;
+
         case MFnData::kIntArray:
         {
             MFnIntArrayData arr(iPlug.asMObject());
@@ -1362,6 +1378,16 @@ void createUserPropertyFromMFnAttr(const MObject& iAttr,
             }
             break;
 
+            case MFnData::kFloatArray:
+            {
+                PlugAndObjArray p;
+                p.plug = iPlug;
+                p.obj = iAttr;
+                p.prop = Abc::OFloatArrayProperty(iParent, plugName, iTimeIndex);
+                oArrays.push_back(p);
+            }
+            break;
+
             case MFnData::kIntArray:
             {
                 PlugAndObjArray p;
@@ -1537,6 +1563,18 @@ void createGeomPropertyFromMFnAttr(const MObject& iAttr,
             }
             break;
 
+            case MFnData::kFloatArray:
+            {
+                PlugAndObjArray p;
+                p.plug = iPlug;
+                p.obj = iAttr;
+                AbcGeom::OFloatGeomParam gp(iParent, plugName, false, iScope,
+                    1, iTimeIndex, md);
+                p.prop = gp.getValueProperty();
+                oArrayVec.push_back(p);
+            }
+            break;
+
             case MFnData::kIntArray:
             {
                 PlugAndObjArray p;
@@ -1664,9 +1702,18 @@ AttributesWriter::AttributesWriter(
     Alembic::Abc::OObject & iParentObj,
     const MFnDependencyNode & iNode,
     Alembic::Util::uint32_t iTimeIndex,
-    const JobArgs & iArgs)
+    const JobArgs & iArgs,
+    bool isShape)
 {
-    PlugAndObjScalar visPlug;
+
+	MSelectionList selected;
+	selected.add(iNode.name());
+
+	selected.getDagPath(0, dagPath);
+
+	
+	
+	PlugAndObjScalar visPlug;
 
     unsigned int attrCount = iNode.attributeCount();
     unsigned int i;
@@ -1710,7 +1757,7 @@ AttributesWriter::AttributesWriter(
 
         int sampType = util::getSampledType(plug);
 
-        MPlug scopePlug = iNode.findPlug(propName + cAttrScope);
+        MPlug scopePlug = iNode.findPlug(propName + cAttrScope, true);
         AbcGeom::GeometryScope scope = AbcGeom::kUnknownScope;
 
         if (!scopePlug.isNull())
@@ -1719,7 +1766,7 @@ AttributesWriter::AttributesWriter(
         }
 
         MString typeStr;
-        MPlug typePlug = iNode.findPlug(propName + cAttrType);
+        MPlug typePlug = iNode.findPlug(propName + cAttrType, true);
         if (!typePlug.isNull())
         {
             typeStr= typePlug.asString();
@@ -1795,6 +1842,86 @@ AttributesWriter::AttributesWriter(
         }
     }
 
+    // handle visibility
+    //if (!visPlug.plug.isNull())
+    {
+	
+	
+        int retVis = util::getVisibilityType(visPlug.plug);
+
+        // visible will go on the top most compound
+        Abc::OCompoundProperty parent = iParentObj.getProperties();
+
+        switch (retVis)
+        {
+            // static visibility 0 case
+            case 1:
+            {
+                Alembic::Util::int8_t visVal =
+                    Alembic::AbcGeom::kVisibilityHidden;
+
+                Abc::OCharProperty bp =
+                    Alembic::AbcGeom::CreateVisibilityProperty(
+                        iParentObj, 0);
+                bp.set(visVal);
+				visPlug.prop = bp;
+				mAnimVisibility = visPlug;
+            }
+            break;
+
+            // animated visibility 0 case
+            case 2:
+            {
+                Alembic::Util::int8_t visVal =
+                    Alembic::AbcGeom::kVisibilityHidden;
+
+                Abc::OCharProperty bp =
+                    Alembic::AbcGeom::CreateVisibilityProperty(
+                        iParentObj, iTimeIndex);
+
+                bp.set(visVal);
+                visPlug.prop = bp;
+                mAnimVisibility = visPlug;
+            }
+            break;
+
+            // animated visibility 1 case
+			default:
+			case 3:
+            {
+                // dont add if we are forcing static (no frame range specified)
+                if (iTimeIndex == 0)
+                {
+                    break;
+                }
+
+                mAnimVisibility = visPlug;
+
+                Alembic::Util::int8_t visVal =
+                    Alembic::AbcGeom::kVisibilityDeferred;
+
+                Abc::OCharProperty bp =
+                    Alembic::AbcGeom::CreateVisibilityProperty(
+                        iParentObj, iTimeIndex);
+
+                bp.set(visVal);
+                visPlug.prop = bp;
+                mAnimVisibility = visPlug;
+
+            }
+            break;
+
+
+
+
+
+
+            break;
+			
+        }
+		
+    }
+
     // write the static scalar props
     std::vector< PlugAndObjScalar >::iterator k =
         staticPlugObjScalarVec.begin();
@@ -1842,6 +1969,12 @@ AttributesWriter::AttributesWriter(
         }
     }
 
+    // we shouldn't set the animated channels so bail
+    if (isShape && !iArgs.setFirstAnimShape)
+    {
+        return;
+    }
+
     // write the animated userProperties
     k = mPlugObjScalarVec.begin();
     kend = mPlugObjScalarVec.end();
@@ -1863,9 +1996,10 @@ AttributesWriter::AttributesWriter(
         }
     }
 
-    // write the animated arbGeomProps
+    // write the animated arbGeomProps if appropriate
     j = mPlugObjArrayVec.begin();
     jend = mPlugObjArrayVec.end();
+
     for (; j != jend; j++)
     {
         MString propName = j->plug.partialName(0, 0, 0, 0, 0, 1);
@@ -1881,76 +2015,6 @@ AttributesWriter::AttributesWriter(
         }
     }
 
-    //
-    // Rest of this is specific to visibility
-    if (!visPlug.plug.isNull())
-    {
-        int retVis = util::getVisibilityType(visPlug.plug);
-
-        // visible will go on the top most compound
-        Abc::OCompoundProperty parent = iParentObj.getProperties();
-
-        switch (retVis)
-        {
-            // static visibility 0 case
-            case 1:
-            {
-                Alembic::Util::int8_t visVal =
-                    Alembic::AbcGeom::kVisibilityHidden;
-
-                Abc::OCharProperty bp =
-                    Alembic::AbcGeom::CreateVisibilityProperty(
-                        iParentObj, 0);
-                bp.set(visVal);
-            }
-            break;
-
-            // animated visibility 0 case
-            case 2:
-            {
-                Alembic::Util::int8_t visVal =
-                    Alembic::AbcGeom::kVisibilityHidden;
-
-                Abc::OCharProperty bp =
-                    Alembic::AbcGeom::CreateVisibilityProperty(
-                        iParentObj, iTimeIndex);
-
-                bp.set(visVal);
-                visPlug.prop = bp;
-                mAnimVisibility = visPlug;
-            }
-            break;
-
-            // animated visibility 1 case
-            case 3:
-            {
-                // dont add if we are forcing static (no frame range specified)
-                if (iTimeIndex == 0)
-                {
-                    break;
-                }
-
-                mAnimVisibility = visPlug;
-
-                Alembic::Util::int8_t visVal =
-                    Alembic::AbcGeom::kVisibilityDeferred;
-
-                Abc::OCharProperty bp =
-                    Alembic::AbcGeom::CreateVisibilityProperty(
-                        iParentObj, iTimeIndex);
-
-                bp.set(visVal);
-                visPlug.prop = bp;
-                mAnimVisibility = visPlug;
-
-            }
-            break;
-
-            // dont write any visibility
-            default:
-            break;
-        }
-    }
 }
 
 //
@@ -2113,41 +2177,31 @@ void AttributesWriter::write()
             continue;
         }
     }
-	/*
-    if (!mAnimVisibility.plug.isNull())
-    {
-        Alembic::Util::int8_t visVal = -1;
-        if (!mAnimVisibility.plug.asBool())
-        {
-            visVal = 0;
-        }
 
-        mAnimVisibility.prop.set(&visVal);
-    }
-	*/
-	
 	// raymond
-   // if (!mAnimVisibility.plug.isNull())
-    {
-        Alembic::Util::int8_t visVal = -1;
+	// if (!mAnimVisibility.plug.isNull())
+	{
+		Alembic::Util::int8_t visVal = -1;
 		if (dagPath.isValid())
 		{
 			if (!dagPath.isVisible())
 			{
-	            visVal = 0;
-		    }
-		}
-/*
-		if (dagPath.extendToShapeDirectlyBelow.isValid())
-		{
-			if (!dagPath.extendToShapeDirectlyBelow.isVisible())
-			{
-	            visVal = 0;
+				visVal = 0;
 			}
 		}
-*/
+		/*
+		if (dagPath.extendToShapeDirectlyBelow.isValid())
+		{
+		if (!dagPath.extendToShapeDirectlyBelow.isVisible())
+		{
+		visVal = 0;
+		}
+		}
+		*/
+		
 		mAnimVisibility.prop.set(&visVal);
-    }	
+	}
+
 
 }
 

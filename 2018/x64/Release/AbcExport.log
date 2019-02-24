@@ -1,17 +1,15 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : The process cannot access the file 's:\pipeline\visual_studio\packages\abcexport\2018\x64\release\attributeswriter.obj' because it is being used by another process.
-C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (qAbcExport.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (qAbcExport.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   AbcExport.cpp
-AbcExport.cpp(653): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFileObject::path': Use the methods MFileObject::expandedPath or MFileObject::resolvedPath instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFileObject.h(158): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFileObject::path'
-AbcExport.cpp(669): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
   AbcWriteJob.cpp
-AbcWriteJob.cpp(266): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-AbcWriteJob.cpp(388): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
   AttributesWriter.cpp
-AttributesWriter.cpp(1713): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
-AttributesWriter.cpp(1722): warning C4996: 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug': Use the MFnDependencyNode::findPlug( const MString&, bool, MStatus* ) method instead.
-  S:\pipeline\visual_studio\contrib\maya2019_devkitBase\include\maya/MFnDependencyNode.h(115): note: see declaration of 'Autodesk::Maya::OpenMaya20190000::MFnDependencyNode::findPlug'
+  MayaMeshWriter.cpp
+  MayaPointPrimitiveWriter.cpp
+  MayaTransformWriter.cpp
+  MayaUtility.cpp
+  MayaCameraWriter.cpp
+  MayaNurbsCurveWriter.cpp
+  MayaLocatorWriter.cpp
+  MayaNurbsSurfaceWriter.cpp
+  Generating Code...
+     Creating library x64\Release\AbcExport.lib and object x64\Release\AbcExport.exp
+  AbcExport.vcxproj -> S:\pipeline\visual_studio\packages\AbcExport\2018\x64\Release\AbcExport.mll

@@ -73,10 +73,6 @@ class AttributesWriter
 
     // animated visibility plug
     PlugAndObjScalar mAnimVisibility;
-	
-	// raymond
-	bool animVisibility;
-	MDagPath dagPath;	
 };
 
 typedef Alembic::Util::shared_ptr<AttributesWriter> AttributesWriterPtr;
